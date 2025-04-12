@@ -369,6 +369,7 @@ ngx_http_lua_body_filter(ngx_http_request_t *r, ngx_chain_t *in)
 
     } else {
         out = NULL;
+        ctx->context = old_context;
     }
 
     rc = ngx_http_next_body_filter(r, out);
